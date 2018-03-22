@@ -8,7 +8,13 @@ class PokemonsController < ApplicationController
   	@pokemon = Pokemon.create(pokemon_params)
   	@pokemon.update(health: 100, level: 1, trainer_id: current_trainer.id)
 
-  	redirect_to trainer_path(current_trainer)
+  	if @pokemon.save
+  		redirect_to trainer_path(current_trainer)
+  	else
+  		flash[:error] = @pokemon.errors.full_messages.to_sentence
+  	end
+
+
   end
 
   private 
@@ -33,7 +39,7 @@ class PokemonsController < ApplicationController
   		redirect_to trainer_path(current_trainer)
   		
   	else
-  		@pokemon.update(health: @pokemon.health - 10)
+  		@pokemon.update(health: @health)
   		redirect_to trainer_path(current_trainer)
 
   	

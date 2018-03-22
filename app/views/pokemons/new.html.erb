@@ -1,6 +1,6 @@
 <%= simple_form_for @pokemon, url: pokemons_path do |f| %>
   <%= f.input :name %>
-  <%= f.input :ndex %>
+ 
   <%= f.collection_radio_buttons(
     :ndex, (1..649).map {|ndex| [ndex, ndex]}, :first, :last
   ) do |b| %>
@@ -9,6 +9,7 @@
   </div>
   <% end %>
 
+  <br>
   <%= f.button :submit, class: "create-pokemon-btn" %>
- 
+ 	
 <% end %>

@@ -11,9 +11,10 @@ This line creates a button which invokes the capture method when pressed, allowi
 pokemon.name, or the name in the pokedex.
 
 # Question 4: What did you pass into the redirect_to? If it is a path, what did that path need? If it is not a path, why is it okay not to have a path here?
-I passed in the trainer path for the current trainer into the redirect_to. that path needed the current trainer object.
+I passed in the trainer path for the current trainer into the redirect_to. The trainer path needed the current trainer object.
 
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
+It renders the error messages 
 
 # Give us feedback on the project and decal below!
 
